@@ -9,7 +9,7 @@ class Home extends Component {
             <div>
 
                 <h1 className="title">Welcome to <span className="mastermind"> Mastermind</span></h1>
-                <h4> It's the Codemaker Vs the Codebreaker</h4>
+                <h4> It's the <span className="mastermind">Codemaker </span>vs the <span className="mastermind">Codebreaker</span></h4>
 
                 <h4>Would you like to be the Codemaker or Codebreaker?</h4>
 

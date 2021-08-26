@@ -1,0 +1,16 @@
+h1 {
+    padding:30px;
+}
+.mastermind {
+    font-family: 'Bangers', cursive;
+    color: red;
+}
+
+.colordisp {
+    display: flex;
+    justify-content: center;
+}
+.guess {
+    margin:10px;
+    color: white;
+}

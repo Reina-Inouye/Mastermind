@@ -5,7 +5,7 @@ import Routes from './Routes';
 
 class App extends Component {
   static defaultProps = {
-      colors: [ "pink", "orange","yellow","white","purple","green"] 
+      colors: [ "red", "orange","yellow","white","purple","green"] 
     };
   render() {
       return (
