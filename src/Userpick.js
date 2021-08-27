@@ -70,7 +70,9 @@ handleSubmit(evt) {
                         value={this.state.color4}
                         onChange={this.handleChange}
                     />
+                    <div style={{paddingTop:"20px"}}>
                     <Button>Check Guess</Button>
+                    </div>
                     </div>
                    
                 </Form>
