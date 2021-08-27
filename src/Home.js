@@ -18,11 +18,6 @@ class Home extends Component {
                     <Button className="But" color="success" href="/Codebreaker"> Codebreaker</Button> 
                     <Button className="But" color="warning" href="/Codemaker"> Codemaker</Button>
                 </div>
-
-
-
-
-
             </div >
 
         );
