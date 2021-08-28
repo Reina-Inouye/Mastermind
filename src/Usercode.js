@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button } from 'reactstrap';
 
 
-class Userpick extends Component {
+class Usercode extends Component {
 
     constructor(props) {
         super(props);
@@ -18,9 +18,13 @@ class Userpick extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
-        const pick = { ...this.state, id: this.props.n };
-
-        this.props.updateGuesses(pick);
+        const usercode = [];
+        usercode[0] = this.state.color1;
+        usercode[1] = this.state.color1;
+        usercode[2] = this.state.color1;
+        usercode[3] = this.state.color1;
+        console.log(usercode);
+        this.props.setCode(usercode);
         this.setState({ color1: "", color2: "", color3: "", color4: "" });
     }
 
@@ -70,7 +74,7 @@ class Userpick extends Component {
                             onChange={this.handleChange}
                         />
                         <div style={{ paddingTop: "20px" }}>
-                            <Button color="success">Check Guess</Button>
+                            <Button color="success">Set Code</Button>
                         </div>
                     </div>
 
@@ -81,4 +85,4 @@ class Userpick extends Component {
     }
 }
 
-export default Userpick;
+export default Usercode;

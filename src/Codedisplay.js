@@ -11,8 +11,8 @@ class Codedisplay extends Component {
 
     componentDidMount() {
         setTimeout(function () { //Start the timer
-            this.setState({ render: true }) //After 3 second, set render to true
-        }.bind(this), 3000)
+            this.setState({ render: true }) //After 2 second, set render to true
+        }.bind(this), 2000)
     }
 
     render() {
@@ -65,7 +65,6 @@ class Codedisplay extends Component {
                 <div style={{ backgroundColor: display[2], width: "40px", height: "40px", borderRadius: "50%" }}></div>
                 <div style={{ backgroundColor: display[3], width: "40px", height: "40px", borderRadius: "50%" }}></div>
                 {renderContainer}
-
             </div>
         );
     }
