@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'reactstrap';
-import uuid from "uuid/v4";
+
 
 class Userpick extends Component {
 
@@ -18,9 +18,8 @@ handleChange(evt) {
 
 handleSubmit(evt) {
     evt.preventDefault();
-    const pick = { ...this.state, id: uuid() };
-    // let pick = {...this.state}
-    console.log(pick);
+    const pick = { ...this.state, id: this.props.n };
+   
     this.props.updateGuesses(pick);
     this.setState({color1:"", color2:"", color3:"", color4:"" });
 }
@@ -71,7 +70,7 @@ handleSubmit(evt) {
                         onChange={this.handleChange}
                     />
                     <div style={{paddingTop:"20px"}}>
-                    <Button>Check Guess</Button>
+                    <Button color="success">Check Guess</Button>
                     </div>
                     </div>
                    

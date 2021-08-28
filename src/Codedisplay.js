@@ -11,27 +11,27 @@ class Codedisplay extends Component {
 
     componentDidMount() {
         setTimeout(function () { //Start the timer
-            this.setState({ render: true }) //After 1 second, set render to true
-        }.bind(this), 4000)
+            this.setState({ render: true }) //After 3 second, set render to true
+        }.bind(this), 3000)
     }
 
     render() {
-        ;
+        
         let display = [];
-       
-        console.log(this.props.colors);
-       
+
         display[0] = this.props.colors.color1;
         display[1] = this.props.colors.color2;
         display[2] = this.props.colors.color3;
         display[3] = this.props.colors.color4;
 
-
+        let check = this.props.code.slice(0);
         let x = 0;
+        let index = 0;
         for (let i = 0; i <= 3; i++) {
-            if (this.props.code.indexOf(display[i]) !== -1) {
-                console.log(2)
+            index = check.indexOf(display[i]);
+            if ( index !== -1) {
                 x = x + 1;
+                check.splice(index, 1);
             }
         }
 
@@ -44,22 +44,22 @@ class Codedisplay extends Component {
 
         let message;
         if (y === 4) {
-            message = "Perfect Match!! Press Go Back to Play again";
-        }
-        else {
-            message = `${x} correct color(s) & ${y} correct in position(s), Guess again!`
+            message = "PERFECT MATCH!!! Press Start Over to Play again";
+        } else if (y!==4 && this.props.colors.id !==10){
+            message = `${x} correct color(s) & ${y} correct in position(s), Guess again`
+        } else {
+            message = `${x} correct color(s) & ${y} correct in position(s), GAME OVER!`
         }
 
-        
 
-        let renderContainer = false //By default don't render anything
+        let renderContainer = false; //By default don't render anything
         if (this.state.render) { //If this.state.render == true, which is set to true by the timer.
             renderContainer = <p className="guess">{message}</p> //Add dom elements
         }
 
         return (
             <div className="colordisp">
-                {/* <p className="guess"> Guess {this.props.n}</p> */}
+                <p className="guess"> Guess {this.props.colors.id}</p>
                 <div style={{ backgroundColor: display[0], width: "40px", height: "40px", borderRadius: "50%" }}></div>
                 <div style={{ backgroundColor: display[1], width: "40px", height: "40px", borderRadius: "50%" }}></div>
                 <div style={{ backgroundColor: display[2], width: "40px", height: "40px", borderRadius: "50%" }}></div>
