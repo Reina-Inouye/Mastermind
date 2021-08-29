@@ -20,22 +20,17 @@ class Usercode extends Component {
         evt.preventDefault();
         const usercode = [];
         usercode[0] = this.state.color1;
-        usercode[1] = this.state.color1;
-        usercode[2] = this.state.color1;
-        usercode[3] = this.state.color1;
+        usercode[1] = this.state.color2;
+        usercode[2] = this.state.color3;
+        usercode[3] = this.state.color4;
         console.log(usercode);
         this.props.setCode(usercode);
         this.setState({ color1: "", color2: "", color3: "", color4: "" });
     }
 
     render() {
-
-        let colorList = this.props.colors.map((c) =>
-            <span style={{ color: c }} key={c}>{c} </span>
-        )
         return (
-            <div>
-                <h4>Pick 4 colors: {colorList}</h4>
+            <div >
                 <Form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="color1"></label>

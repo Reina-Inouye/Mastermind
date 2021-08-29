@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Userpick from './Userpick';
-import Codedisplay from './Codedisplay.js';
+import CodeDispBreaker from './CodeDispBreaker.js';
 import Code from './Code.js';
 import './Code.css';
 
@@ -14,14 +14,12 @@ class Codebreaker extends Component {
     }
 
     updateGuesses(pick) {
-        console.log(pick);
+        console.log(pick)
         this.setState({
             colorGuesses: [...this.state.colorGuesses, pick],
             isFirstGuess: false
         })
         this.setState(curState => ({ nGuesses: curState.nGuesses + 1 }));
-        console.log(this.state.colorGuesses);
-        console.log(this.state.nGuesses);
     }
 
     handleClick() {
@@ -54,13 +52,15 @@ class Codebreaker extends Component {
                 <div style={{ margin: "50px" }}>
                     {render}
                 </div>
+
                 {this.state.isFirstGuess ? (
                     <div></div>
                 ) : (
                     this.state.colorGuesses.map(ca =>
-                        <Codedisplay colors={ca} code={this.state.computerCode} key={ca.id} />
+                        <CodeDispBreaker colors={ca} code={this.state.computerCode} key={ca.id} />
                     )
                 )}
+
                 {this.state.nGuesses===11? (<Code colors={this.state.computerCode}/>):(<div></div>)}
 
                 <div style={{ paddingBottom: "300px", paddingTop: "20px" }}>
