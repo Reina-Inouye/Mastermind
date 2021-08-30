@@ -9,7 +9,7 @@ import './Code.css';
 class Codemaker extends Component {
     constructor(props) {
         super(props);
-        this.state = { userCode: [], isSettingCode: true, isFirstGuess: false, isGuessing: false, isDispGuess: false, computerGuesses: [], currentGuess: [], nGuesses: 1, arrayGuessCheck: [] }
+        this.state = { userCode: [], isSettingCode: true, isFirstGuess: false, isGuessing: false, isDispGuess: false, computerGuesses: [], currentGuess: [], nGuesses: 1 }
         this.setCode = this.setCode.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.updateArrayGuessCheck = this.updateArrayGuessCheck.bind(this)
@@ -58,10 +58,14 @@ class Codemaker extends Component {
 }
 
     updateArrayGuessCheck(check) {
-        let currentGuess = this.state.currentGuess;
+        let currentGuess = this.state.currentGuess[0];
+        currentGuess.correctColor  = check.correctColor;
+        currentGuess.correctPosition  = check.correctPosition;
+        let guessArray = [];
+        guessArray.push(currentGuess);
+        console.log(currentGuess);
         this.setState({
-            arrayGuessCheck: [...this.state.arrayGuessCheck, check],
-            computerGuesses: [...this.state.computerGuesses, currentGuess],
+            computerGuesses: [...this.state.computerGuesses, guessArray],
             isDispGuess: true
         })
 
@@ -100,7 +104,7 @@ class Codemaker extends Component {
             render = <div></div>
         } else if (this.state.isGuessing && this.state.nGuesses < 10) {
             render = <UserCodeCheck colors={this.state.currentGuess} updateArrayGuessCheck={this.updateArrayGuessCheck} n={this.state.nGuesses} />
-        } else if (this.state.arrayGuessCheck[this.state.nGuesses].correctPosition === 4) {
+        } else if (this.state.computerGuesses[this.state.nGuesses].correctPosition === 4) {
             render = <div> Correct Guess! You Lost! Press Start Over to play again</div>
         } else {
             render = <h4 className="guess">10 wrong guesses! You Won! Press Start Over to play again</h4>

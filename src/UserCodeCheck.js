@@ -17,12 +17,11 @@ class UserCodeCheck extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
-        const pick = { ...this.state, id: this.props.n };
-
+        // const pick = { ...this.state, id: this.props.n };
+        const pick = {...this.state}
         this.props.updateArrayGuessCheck(pick);
         this.setState({ correctColor: "", correctPosition: ""});
     }
-
 
     render() {
        

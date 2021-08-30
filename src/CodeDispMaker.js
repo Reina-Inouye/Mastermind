@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class CodeDispMaker extends Component {
     render() {
-
+console.log(this.props.colors);
+console.log(this.props.colors[0].color1);
         return (
             <div>
                 <div className="colordisp">
