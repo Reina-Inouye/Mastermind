@@ -32,7 +32,6 @@ class Codemaker extends Component {
     }
 
     computerFirstGuess() {
-        console.log("start");
 
         let guess = [];
         for (let i = 0; i <= 3; i++) {
@@ -47,22 +46,22 @@ class Codemaker extends Component {
             id: this.state.nGuesses
         }
 
+        guess= [];
+        guess.push(guessObject);
+       
+
         this.setState({
-            computerGuesses: [...this.state.computerGuesses, guessObject],
-            // currentGuess: [...this.state.currentGuess, guessObject],
+            currentGuess: guess,
             isGuessing: true,
             isFirstGuess: false
         })
-
-
-    }
+}
 
     updateArrayGuessCheck(check) {
-        let currentGuess = this.props.currentGuess;
+        let currentGuess = this.state.currentGuess;
         this.setState({
             arrayGuessCheck: [...this.state.arrayGuessCheck, check],
             computerGuesses: [...this.state.computerGuesses, currentGuess],
-            currentGuess: [],
             isDispGuess: true
         })
 
@@ -85,14 +84,13 @@ class Codemaker extends Component {
             id: this.state.nGuesses + 1
         }
 
+        guess= [];
+        guess.push(guessObject);
+
         this.setState({
-            computerGuesses: [...this.state.computerGuesses, guessObject],
-            // currentGuess: [...this.state.currentGuess, guessObject],
+            currentGuess: guess,
+            isDispGuess: true
         })
-
-
-        console.log(guessObject);
-        console.log(this.state.computerGuesses);
     }
 
     render() {
@@ -100,15 +98,15 @@ class Codemaker extends Component {
         let render;
         if (!this.state.isGuessing) {
             render = <div></div>
-        } else if(this.state.isGuessing && this.state.nGuesses < 10) {
-            render = <UserCodeCheck colors={this.state.computerGuesses} updateArrayGuessCheck={this.updateArrayGuessCheck} n={this.state.nGuesses} />
+        } else if (this.state.isGuessing && this.state.nGuesses < 10) {
+            render = <UserCodeCheck colors={this.state.currentGuess} updateArrayGuessCheck={this.updateArrayGuessCheck} n={this.state.nGuesses} />
         } else if (this.state.arrayGuessCheck[this.state.nGuesses].correctPosition === 4) {
-            render = <div> Correct Guess! You Lost! Press Start Over to play again</div>    
+            render = <div> Correct Guess! You Lost! Press Start Over to play again</div>
         } else {
-            render = <h4 className ="guess">10 wrong guesses! You Won! Press Start Over to play again</h4> 
+            render = <h4 className="guess">10 wrong guesses! You Won! Press Start Over to play again</h4>
         }
 
-    return(
+        return (
             <div>
                 <h1 className="mastermind">Codemaker</h1>
 

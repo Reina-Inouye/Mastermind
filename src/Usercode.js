@@ -23,7 +23,7 @@ class Usercode extends Component {
         usercode[1] = this.state.color2;
         usercode[2] = this.state.color3;
         usercode[3] = this.state.color4;
-        console.log(usercode);
+      
         this.props.setCode(usercode);
         this.setState({ color1: "", color2: "", color3: "", color4: "" });
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    Row, Col, Card, CardText, CardHeader, CardBody, CardTitle, CardSubtitle, Button, Form
+    Row, Col, Card, CardText, CardTitle, Button, Form
 } from 'reactstrap';
 import './Home.css';
 
@@ -19,7 +19,7 @@ class Home extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
-        this.setState({ color1: "", color2: "", color3: "", color4: "" });
+        this.setState({ name: ""});
     }
 
 

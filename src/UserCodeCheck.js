@@ -25,21 +25,21 @@ class UserCodeCheck extends Component {
 
 
     render() {
-        let display = this.props.colors[this.props.colors.length-1];
-        // let display = this.props.colors;
-        // console.log(this.props.colors.color1)
+       
+        let display = this.props.colors[0];
+
         return (
             <div>
-                <div className="guess"> Guess #{display.id}</div>
+                <div className="guess"> Guess #{this.props.n}</div>
                 <div className="colordisp">
                     <div style={{ backgroundColor: display.color1, width: "40px", height: "40px", borderRadius: "50%" }}></div>
                     <div style={{ backgroundColor: display.color2, width: "40px", height: "40px", borderRadius: "50%" }}></div>
                     <div style={{ backgroundColor: display.color3, width: "40px", height: "40px", borderRadius: "50%" }}></div>
                     <div style={{ backgroundColor: display.color4, width: "40px", height: "40px", borderRadius: "50%" }}></div>
-                    
+
                 </div >
                 <Form onSubmit={this.handleSubmit}>
-                    <div style ={{paddingTop:"20px"}}>
+                    <div style={{ paddingTop: "20px" }}>
                         <label htmlFor="correctColor"></label>
                         <input
                             placeholder="# correct colors"
@@ -59,8 +59,8 @@ class UserCodeCheck extends Component {
                         />
                     </div>
                     <div style={{ padding: "20px" }}>
-                            <Button color="success">Next Guess</Button>
-                        </div>
+                        <Button color="success">Next Guess</Button>
+                    </div>
                 </Form>
             </div>
         );
