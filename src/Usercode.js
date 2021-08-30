@@ -29,8 +29,11 @@ class Usercode extends Component {
     }
 
     render() {
+        let colorList = this.props.colors.map((c) =>
+            <span style={{ color: c }} key={c}>{c} </span>)
         return (
             <div >
+                <h4>Pick your code: {colorList}</h4>
                 <Form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="color1"></label>

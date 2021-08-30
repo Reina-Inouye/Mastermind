@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'reactstrap';
+import {
+    Row, Col, Card, CardText, CardHeader, CardBody, CardTitle, CardSubtitle, Button, Form
+} from 'reactstrap';
 import './Home.css';
 
 class Home extends Component {
@@ -30,15 +32,25 @@ class Home extends Component {
 
                 <h4>Would you like to be the Codemaker or the Codebreaker?</h4>
 
-                <div className="But">
-                    <Button className="But" color="success" href="/Codebreaker"> Codebreaker</Button>
-                    <Button className="But" color="warning" href="/Codemaker"> Codemaker</Button>
-                </div>
-                <div className="rules">
-                    <p >Codebreaker Rules:  Press a button so the computer generates a 4 color code.  You have 10 turns to guess the code.  </p>
-                    <p >Codemaker Rules:  You come up with a 4 color code.  The computer has 10 turns to guess your code.  </p>
-                </div>
-                <div className="rules">
+                <Row >
+                    <Col sm={{ size: "4", offset: 2 }}>
+                        <Card body className="card">
+                            <CardTitle tag="h5" className="cardTitle"> <span className="mastermind">Codebreaker  </span>Rules</CardTitle>
+                            <CardText>As the Codebreaker you press a button so the computer generates the 4 color code and you have 10 turns to guess the code. At each turn, the computer will let you know how many colors you guessed correctly and how many were in the right position.</CardText>
+                            <Button className="But" color="success" href="/Home/Codebreaker"> Let's Play Codebreaker</Button>
+                        </Card>
+                    </Col>
+                    <Col sm={{ size: "4"}}>
+                        <Card body className="card">
+                            <CardTitle tag="h5" className="cardTitle"> <span className="mastermind">Codemaker  </span> Rules</CardTitle>
+                            <CardText>As the Codemaker you come up with the 4 color code.  The computer has 10 turns to guess your code. At each turn, you let the computer know how many colors were guessed correctly and how many were in the right position.                 </CardText>
+                            <Button className="But" color="warning" href="/Home/Codemaker"> Let's Play Codemaker</Button>
+                        </Card>
+                    </Col>
+                </Row>
+
+
+                <div className = "rules">
                     <h5>Enter your name to keep track of your score</h5>
                     <Form onSubmit={this.handleSubmit}>
                         <div className="form">
@@ -52,6 +64,11 @@ class Home extends Component {
                             />
                         </div>
                     </Form>
+                </div>
+                <div style={{ paddingBottom: "30px"}}>
+                    <Button color="primary" href="/">
+                        Back to Landing Page
+                    </Button>
                 </div>
             </div >
 

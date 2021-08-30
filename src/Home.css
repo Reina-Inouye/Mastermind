@@ -5,6 +5,10 @@
     font-family: 'Bangers', cursive;
 }
 
+.card {
+    min-height: 200px;
+}
+
 
 .mastermind {
     font-family: 'Bangers', cursive;
@@ -21,11 +25,13 @@ h4 {
     padding-bottom: 40px;
 }
 
-.rules {
-color:white;
-padding-bottom: 100px;
+.cardTitle {
+    color: red;
+    font-size: 30px !important;
 }
 
-.form {
-    padding-bottom: 300px;  
+
+.rules {
+color:white;
+padding-top:40px;
 }

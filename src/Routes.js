@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Codebreaker from './Codebreaker';
 import Codemaker from './Codemaker';
 import Home from './Home';
+import LandingPage from './LandingPage';
 
 
 class Routes extends Component {
@@ -10,14 +11,17 @@ class Routes extends Component {
         return (
             <div>
                 <Switch>
-                    <Route
+                <Route
                         exact path="/"
+                        render={() => <LandingPage/>}/>
+                    <Route
+                        exact path="/Home"
                         render={() => <Home colors={this.props.colors}/>} />
                     <Route
-                        exact path="/Codemaker"
+                        exact path="/Home/Codemaker"
                         render={() => <Codemaker colors={this.props.colors} />} />
                     <Route
-                        exact path="/Codebreaker"
+                        exact path="/Home/Codebreaker"
                         render={() => <Codebreaker colors={this.props.colors} />} />
                     <Redirect to="/" />
                 </Switch>

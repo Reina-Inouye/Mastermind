@@ -95,9 +95,6 @@ class Codemaker extends Component {
         console.log(this.state.computerGuesses);
     }
 
-
-
-
     render() {
 
         let render;
@@ -110,9 +107,6 @@ class Codemaker extends Component {
         } else {
             render = <h4 className ="guess">10 wrong guesses! You Won! Press Start Over to play again</h4> 
         }
-    
-
-
 
     return(
             <div>
@@ -121,7 +115,7 @@ class Codemaker extends Component {
                 <div style={{ margin: "50px" }}>
 
                     {this.state.isSettingCode ? (
-                        [<h4>Pick your Code</h4>, <Usercode colors={this.props.colors} setCode={this.setCode} />]
+                        <Usercode colors={this.props.colors} setCode={this.setCode} />
                     ) : (
                         <Code colors={this.state.userCode} />
                     )}
@@ -143,7 +137,7 @@ class Codemaker extends Component {
 
                 </div>
                 <div style={{ paddingBottom: "400px", paddingTop: "20px" }}>
-                    <Button color="primary" href="/">
+                    <Button color="primary" href="/Home">
                         Start Over
                     </Button>
                 </div>

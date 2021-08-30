@@ -64,7 +64,7 @@ class Codebreaker extends Component {
                 {this.state.nGuesses===11? (<Code colors={this.state.computerCode}/>):(<div></div>)}
 
                 <div style={{ paddingBottom: "300px", paddingTop: "20px" }}>
-                    <Button color="primary" href="/">
+                    <Button color="primary" href="/Home">
                         Start Over
                     </Button>
                 </div>
