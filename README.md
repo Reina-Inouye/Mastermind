@@ -1,3 +1,10 @@
+# Link to Deployed project:
+https://mastermind-hazel.vercel.app/
+
+# Developer: Reina Inouye, see below for link to webiste and linkedin profile:
+https://reina-inouye.github.io/
+https://www.linkedin.com/in/reina-inouye-s-e-05177516/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
