@@ -104,7 +104,7 @@ console.log(win.length);
         } else if (this.state.isGuessing && this.state.nGuesses <= 10 && win.length !== 1) {
             render = <UserCodeCheck colors={this.state.currentGuess} updateArrayGuessCheck={this.updateArrayGuessCheck} n={this.state.nGuesses} />
         } else if (win.length === 1) {
-            render = <h4 className="result"> Correct Guess! You Lost! Press Start Over to play again</h4>
+            render = <h4 className="resultM"> Correct Guess! You Lost! Press Start Over to play again</h4>
         } else {
             render = <h4 className="result">10 wrong guesses! You Won! Press Start Over to play again</h4>
         }
