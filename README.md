@@ -1,7 +1,7 @@
-# Link to Deployed project:
+# Link to deployed project:
 https://mastermind-hazel.vercel.app/
 
-# Developer: Reina Inouye, see below for link to webiste and linkedin profile:
+# Developer: Reina Inouye, see below for links to website and linkedin profile:
 https://reina-inouye.github.io/
 https://www.linkedin.com/in/reina-inouye-s-e-05177516/
 
