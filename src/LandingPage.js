@@ -52,8 +52,9 @@ class LandingPage extends Component {
                                         <CardTitle tag="h5">Reina Inouye</CardTitle>
 
                                         <CardText>I am an aspiring Front-End developer who has been practicing as a Structural Engineer for the past 20 years.  I live in Honolulu and work remotely for an office in San Francisco.  I love to code and am looking to apply the skills I have learnt in my engineering career to solving coding problems.</CardText>
-                                        <CardLink href="https://github.com/Reina-Inouye">github</CardLink>
-                                        <CardLink href="https://reina-inouye.github.io/">portfolio</CardLink>
+                                                                            
+                                        <CardLink href="https://github.com/Reina-Inouye" target="_blank"> <i class="fab fa-github fa-lg"/></CardLink>
+                                        <CardLink href="https://www.linkedin.com/in/reina-inouye-s-e-05177516/" target="_blank"><i class="fab fa-linkedin fa-lg"/></CardLink>
                                     </CardBody>
                                 </Card>
                             </Col>
