@@ -46,26 +46,22 @@ class Codemaker extends Component {
             id: this.state.nGuesses
         }
 
-        guess= [];
-        guess.push(guessObject);
-       
-
         this.setState({
-            currentGuess: guess,
+            currentGuess: guessObject,
             isGuessing: true,
             isFirstGuess: false
         })
 }
 
     updateArrayGuessCheck(check) {
-        let currentGuess = this.state.currentGuess[0];
+        
+        let currentGuess = this.state.currentGuess;
         currentGuess.correctColor  = check.correctColor;
         currentGuess.correctPosition  = check.correctPosition;
-        let guessArray = [];
-        guessArray.push(currentGuess);
-        console.log(currentGuess);
+       
+        
         this.setState({
-            computerGuesses: [...this.state.computerGuesses, guessArray],
+            computerGuesses: [...this.state.computerGuesses, currentGuess],
             isDispGuess: true
         })
 
@@ -88,26 +84,29 @@ class Codemaker extends Component {
             id: this.state.nGuesses + 1
         }
 
-        guess= [];
-        guess.push(guessObject);
-
         this.setState({
-            currentGuess: guess,
+            currentGuess: guessObject,
             isDispGuess: true
         })
     }
 
     render() {
+       
+        let win = this.state.computerGuesses.filter(ca => ca.correctPosition==="4");
+            
+        console.log(win);
+        console.log(this.state.computerGuesses);
+console.log(win.length);
 
         let render;
         if (!this.state.isGuessing) {
             render = <div></div>
-        } else if (this.state.isGuessing && this.state.nGuesses < 10) {
+        } else if (this.state.isGuessing && this.state.nGuesses <= 10 && win.length !== 1) {
             render = <UserCodeCheck colors={this.state.currentGuess} updateArrayGuessCheck={this.updateArrayGuessCheck} n={this.state.nGuesses} />
-        } else if (this.state.computerGuesses[this.state.nGuesses].correctPosition === 4) {
-            render = <div> Correct Guess! You Lost! Press Start Over to play again</div>
+        } else if (win.length === 1) {
+            render = <h4 className="result"> Correct Guess! You Lost! Press Start Over to play again</h4>
         } else {
-            render = <h4 className="guess">10 wrong guesses! You Won! Press Start Over to play again</h4>
+            render = <h4 className="result">10 wrong guesses! You Won! Press Start Over to play again</h4>
         }
 
         return (

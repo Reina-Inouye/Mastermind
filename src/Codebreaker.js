@@ -40,6 +40,7 @@ class Codebreaker extends Component {
             render = <h4>Last Chance to Win!</h4>
         }
 
+            console.log(this.state.colorGuesses);
 
         return (
             <div>

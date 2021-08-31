@@ -25,7 +25,7 @@ class UserCodeCheck extends Component {
 
     render() {
        
-        let display = this.props.colors[0];
+        let display = this.props.colors;
 
         return (
             <div>

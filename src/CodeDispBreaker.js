@@ -47,7 +47,7 @@ class CodeDispBreaker extends Component {
 
         let message;
         if (y === 4) {
-            message = "PERFECT MATCH!!! Press Start Over to play again";
+            message = <h4 className= "result"> "PERFECT MATCH!!! Press Start Over to play again" </h4>
         } else if (y !== 4 && this.props.colors.id !== 10) {
             message = `${x} correct color(s) & ${y} in correct position(s), Guess again`
         } else {
